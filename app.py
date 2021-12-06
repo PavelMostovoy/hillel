@@ -2,22 +2,16 @@
 Dock string
 """
 
-var_1 = """
-Операторы
-Что такое выражение
-Разделение операторов по количеству операндов
-Разделение операторов по функциональному признаку
-Арифметические операторы
-Операторы сравнения
-Присваивание и сокращённые формы присваивания
-Логические операторы
+su = 0
+for variable in range(1, 60):
+    print(variable)
+    if variable % 11 == 0:
+        continue
+    su += variable
+    if su >= 3000:
+        break
+else:
+    print("Filled full")
 
-' gggj " " '
 
-"""
-
-for variable in var_1:
-    printable: str = f"Symbol : {variable}"
-    print(printable)
-
-print("End")
+print(su)
