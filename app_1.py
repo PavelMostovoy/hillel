@@ -2,11 +2,14 @@
 if x even /2
 if x odd * 3 +1
 """
-print("In case of filling '0' programm will end")
+# print("In case of filling '0' programm will end")
 
+x = False
 while True:
 
-    x = int(input("Please input number : "))
+    x = int(input("Please input number :  " if x else
+                  "In case of filling '0'"
+                  " program will end \nPlease input number :  "))
     if x == 0:
         break
     elif x < 0:
