@@ -2,10 +2,22 @@
 Dock string
 """
 
-su = 0
-for variable in range(1, 100):
-    print(variable)
-    su += variable
+var_1 = """
+Операторы
+Что такое выражение
+Разделение операторов по количеству операндов
+Разделение операторов по функциональному признаку
+Арифметические операторы
+Операторы сравнения
+Присваивание и сокращённые формы присваивания
+Логические операторы
 
+' gggj " " '
 
-print(su)
+"""
+
+for variable in var_1:
+    printable: str = f"Symbol : {variable}"
+    print(printable)
+
+print("End")
