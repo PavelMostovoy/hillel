@@ -1,14 +1,11 @@
-var_1 = "volume1"
-var_2 = ["v","o","l","u","m","e","1"]
+"""
+Dock string
+"""
 
-var_3 = var_1[:-1] + "2"
+su = 0
+for variable in range(1, 100):
+    print(variable)
+    su += variable
 
-print(var_3)
 
-
-print(var_1.upper())
-
-var_2.append(345)
-v1 = var_2.pop()
-
-print(var_2, v1)
+print(su)

@@ -11,4 +11,4 @@ d = a + b + c
 e = Decimal('0.3')
 print(d == e)
 
-print(s := 45)
+print(s := 45345345_3334555_665554, f"strinfg  {s}")
