@@ -1,20 +1,18 @@
-"""
-Dock string
-"""
-
-var = """
-Понятие цикла.
-Циклические алгоритмы
-Конструкция while
-Ключевые слова break и continue
-Конструкция while - else
-Примеры использования цикла while
-"""
+# var = 10
+# print(var)
+import time
+VARIABLE = "Global"
 
 
-for i, variable in enumerate(var):
-    if variable == "w":
-        print(f"found in {i}")
-    if variable == "b":
-        print(f"found in {i}")
+def new_func(x: int, y: int):
+    var = input("fill something = > ")
+    var_1 = int(var)
+    var_2 = var_1 + x + y
+    if var_2 > 20:
+        return f'output value = {var_2}, input value = {var}'
+    else:
+        return False
+
+
+print(new_func(100, 34))
 
