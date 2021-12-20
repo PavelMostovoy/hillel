@@ -20,12 +20,7 @@ def gen_funct(value):
         yield f"iteration {i}"
     return "done"
 
+gen = gen_funct(5)
 
-def foo():
-    return 1, 2, 3, 4
-
-
-a, b, _, _ = foo()
-
-
-print(a, b, _)
+for i in gen:
+    print(i)
