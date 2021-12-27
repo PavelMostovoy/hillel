@@ -1,13 +1,12 @@
-# var = 10
-# print(var)
-import time
-VARIABLE = "Global"
+import my_package
 
 
-def new_func(*_, x: int, y: int):
-    return x + y
+print(my_package.__file__)
+
+print(my_package.__path__)
+
+print(my_package.__package__)
 
 
 
-print(new_func(100, y=34))
-
+my_package.foo()
