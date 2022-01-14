@@ -1,9 +1,20 @@
 """
 sorting examples
 """
+import time
+import random
+
+
+def timing(func):
+    def inner(*args):
+        start = time.time()
+        func(*args)
+        print(f"{func.__name__}  Run time: {time.time() - start}")
+    return inner
 
 
 # Bubble Sort Algorithm
+@timing
 def bubble_sort(data):
     length = len(data)
     for i_index in range(length):
@@ -13,25 +24,26 @@ def bubble_sort(data):
                 data[j_index], data[j_index + 1] = data[j_index + 1], data[
                     j_index]
                 need_sorting = True
-            print(data)
         if not need_sorting:
             break
+    print(data)
 
 
 # Insertion Sort Algorithm
+@timing
 def selection_sort(data):
     for scan_index in range(0, len(data)):
         min_index = scan_index
         for comp_index in range(scan_index + 1, len(data)):
             if data[comp_index] < data[min_index]:
                 min_index = comp_index
-            if min_index != scan_index:
-                data[scan_index], data[min_index] = \
-                    data[min_index], data[scan_index]
-        print(data)
+        if min_index != scan_index:
+            data[scan_index], data[min_index]=data[min_index], data[scan_index]
+    print(data)
 
 
 # Quick Sort Algorithm
+
 def quick_sort(data, left, right):
     """
     data : data
@@ -65,10 +77,23 @@ def partition(data, left, right):
         # print(data)
 
     data[left], data[right_index] = data[right_index], data[left]
-    print(data)
+    # print(data)
     return right_index
 
 
-data = [2, 1, 8, 7, 6, 7]
 
-quick_sort(data, 0, 5)
+data = [random.randint(0, 10000) for _ in range(10_000)]
+l1 = data.copy()
+l2 = data.copy()
+l3 = data.copy()
+
+
+start = time.time()
+l1.sort()
+print(l1)
+print(time.time()-start)
+
+selection_sort(l2)
+
+bubble_sort(l3)
+
