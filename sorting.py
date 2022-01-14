@@ -1,18 +1,20 @@
 """
 sorting examples
 """
+
+
 # Bubble Sort Algorithm
 def bubble_sort(data):
     length = len(data)
     for i_index in range(length):
-        swapped = False
+        need_sorting = False  # add check for sorting complete
         for j_index in range(0, length - i_index - 1):
             if data[j_index] > data[j_index + 1]:
                 data[j_index], data[j_index + 1] = data[j_index + 1], data[
                     j_index]
-                swapped = True
+                need_sorting = True
             print(data)
-        if not swapped:
+        if not need_sorting:
             break
 
 
