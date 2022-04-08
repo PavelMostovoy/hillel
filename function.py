@@ -1,78 +1,51 @@
 """
 dd
 """
-import random
+li = []
 
-#
-# def demo_function(variable, variable_2=1):
-#     """
-#     :param variable:
-#     :param variable_2:
-#     :return: tuple
-#     """
-#     _ = variable_2
-#     result = []
-#     for i in variable:
-#         result.append(i)
-#     return result, "dft"
-#
-#
-# x = demo_function("fgh", 2, )
-#
-#
-#
-#
-#
+def outer(fun):
+    """
+    """
+    def inner(*args):
 
+        print("Resultat equal to :")
+        ret = fun(*args)
+        print("meters")
+        return ret
 
-# def gen_funct(value):
-#     """
-#     :param value:
-#     :return:
-#     """
-#     for i in range(value):
-#         yield f"iteration {i}"
-#         yield "next iteration"
-#
-#     return "done"
-#
-#
-# var = [k for k in "range(10)"]
-#
-# var_1 = list()
-# for lif in "range(10)":
-#     var_1.append(lif)
-
-var_2 = [d for d in "range(10)4"]
+    return inner
 
 
 
-def fuu(value):
+@outer
+def boo() -> int:
+    global li
+    li.append("iteration")
+    print("another function")
+    return 1
 
-    if value.isdigit():
-        return int(value)
-    else:
-        return 0
+
+# a = boo()
+
+@outer
+def func(a,b):
+    return a+b
 
 
+@outer
+def func_1(x,y,z):
+    print (x**2+y**2+z**2)
 
-var = list(map(lambda value: int(value) if value.isdigit() else 0, var_2))
 
-var = list(map(fuu, var_2))
+func_1(2,5,8)
 
-print(var)
 
-#
-#
-# gen = gen_funct(5)
-#
-# data = [1, 2, 3, 4, 5, 6, 7]
-#
-# gen2 = (i * 3 for i in data)
-#
-# a = lambda x: x + 5
-#
-# for i in gen2:
-#     print(i)
-#
-# print(lambda x: x + 5)
+from functools import partial
+
+def my_function(a="",b=""):
+    print(f"{a=}, b{b=}")
+
+my_function_foo = partial(my_function, b='bar')
+
+
+my_function_foo("old")
